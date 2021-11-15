@@ -27,7 +27,7 @@ class BNO055
     vector<int16_t> readRawAcc(void);
     vector<int16_t> readRawGyro(void);
 
-    uint8_t resetInterrupt(void) {return writeReg(REG_SYS_TRIGGER, RST_INT);}
+    uint8_t resetInterrupt(void) {imuInt = 0; return writeReg(REG_SYS_TRIGGER, RST_INT);}
     void enableExternalCrystal(bool useExternal);
 
     uint8_t setAccFS(uint8_t fs);
